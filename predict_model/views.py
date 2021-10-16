@@ -19,6 +19,7 @@ def upload_file(request):
     if request.method == 'POST':
         uploaded_file = request.FILES['document']
         df_a, df_b = chat_json_to_csv(uploaded_file)
+        print(df_a.head())
         print(predict_mbti(df_a))
         print(predict_mbti(df_b))
         # fs = FileSystemStorage()
